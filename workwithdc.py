@@ -1,4 +1,5 @@
 import winrm
+#hi
 class workwithdc():
     def __init__(self):
         self.host = '4.227.226.102'

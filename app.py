@@ -1,5 +1,4 @@
 from flask import Flask, request
-import subprocess
 from  workwithdc import workwithdc
 
 app = Flask(__name__)
@@ -18,3 +17,6 @@ def missingperms():
         directory = request.form['directory']
         user = request.form['user']
         output = workwithdc().checkPerms(url=directory,username=user)
+
+if __name__ == '__main__':
+      app.run(host='0.0.0.0', port=8080)

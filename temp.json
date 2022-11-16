@@ -1,0 +1,41 @@
+[
+    {"step_id" : "1", "name ": "שלום איך אפשר לעזור?","steps" : ["2", "4", "7"],"inputSteps" : []},
+    {"step_id" : "2","name ": "המשתמש שלי נעול","steps" : [],"inputSteps" : ["A"], "actionSteps": ["AA"]},
+    {"step_id" : "3","name ": "שחררתי את המשתמש","steps" : [],"inputSteps" : ["B"], "actionSteps": [""]},
+    {"step_id" : "3","name ": "אפתח תקלה לצוותים בשביל המשך תחקור","steps" : [],"inputSteps" : [""], "actionSteps": [""]},
+    {"step_id" : "4","name ": "לא הצלחתי לגשת לתיקייה","steps" : ["5"],"inputSteps" : ["C"], "actionSteps": [""]},
+    {"step_id" : "5","name ": "עכשיו אבדוק שהנתיב תקין ושיש לך הרשאה לתיקייה","steps" : [],"inputSteps" : [], "actionSteps": ["BB"]},
+    {"step_id" : "6","name ": "לא קיימת תיקייה בנתיב זה","steps" : [],"inputSteps" : [], "actionSteps": ["BB"]},
+    {"step_id" : "7", "name ": "תעזור לי בנשר","steps" : ["8"],"inputSteps" : []},
+    {"step_id" : "8", "name ": "הסתבכתי ביצירת פעילות","steps" : ["9"],"inputSteps" : []},
+    {"step_id" : "9", "name ": "ראשית לחץ על נשר בצד ימין למעלה","steps" : ["9"],"inputSteps" : []},
+    {"step_id" : "10", "name ": "בלוח השנה שלפניך סמן את התאריכים הרצויים לפעילות
+לחץ על כן אם נפתחה לך חלונית של יצירת פעילות, אם לא נפתח לחץ על לא","steps" : ["11", "12"], "inputSteps" : []},
+    {"step_id" : "11", "name ": "לא","steps" : ["14"],"inputSteps" : []},
+    {"step_id" : "12", "name ": "כן","steps" : ["13"],"inputSteps" : []},
+    {"step_id" : "13", "name ": "הזן פרטים בהתאם בכל טאב ","steps" : ["16", "17"],"inputSteps" : []},
+    {"step_id" : "14", "name ": "חסרה לך הרשאת עריכת פעילות שמאפשרת לך ליצור פעילות, צור קשר עם חני וירדן","steps" : ["9"],"inputSteps" : []},
+    {"step_id" : "15", "name ": "!שמח לעזור", "steps" : [""],"inputSteps" : []},
+    {"step_id" : "16", "name ": "הצלחתי", "steps" : ["15"],"inputSteps" : []},
+    {"step_id" : "17", "name ": "לא הצלחתי", "steps" : ["18"],"inputSteps" : []},
+    {"step_id" : "18", "name ": "באיזה טאב נתקעת?", "steps" : ["19", "20", "21", "22", "23"],"inputSteps" : []},
+    {"step_id" : "19", "name ": "מאשרים", "steps" : ["24"],"inputSteps" : ["D"]},
+    {"step_id" : "20", "name ": "מגרשים", "steps" : ["24"],"inputSteps" : ["D"]},
+    {"step_id" : "21", "name ": "מיקומים", "steps" : ["24"],"inputSteps" : ["D"]},
+    {"step_id" : "22", "name ": "פרטים נוספים", "steps" : ["24"],"inputSteps" : ["D"]},
+    {"step_id" : "23", "name ": "קינוחים", "steps" : ["24"],"inputSteps" : ["D"]},
+    {"step_id" : "24", "name ": "שמרתי את הפרטים לתחקור, להמשך הטיפול בבעיה יש לפנות לאגם", "steps" : [""],"inputSteps" : ["D"]},
+]
+
+[
+    {"step_id" : "A", "name ": "מה שם המשתמש?"}
+    {"step_id" : "B", "name ": "האם זאת תקלה חוזרת?"}
+    {"step_id" : "C", "name ": "מה הנתיב של התיקייה?"}
+    {"step_id" : "D", "name ": "פרט את הבעיה לצורך תחקור"}
+]
+
+[
+    {"step_id": "AA", "name":"UnlockUser", "ApiCall":"https://chatbot-api-chatbot-2.apps.pnelwhem.eastus.aroapp.io/unlockuser" , "params":["user"]}
+    {"step_id": "BB", "name":"checkPerms", "ApiCall":"https://chatbot-api-chatbot-2.apps.pnelwhem.eastus.aroapp.io/missingperms" , "params":["url"]}
+    {"step_id": "CC", "name":"createticket", "ApiCall":"https://chatbot-api-chatbot-2.apps.pnelwhem.eastus.aroapp.io/createticket" , "params":["name", "description"]}
+]

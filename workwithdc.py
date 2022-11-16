@@ -10,12 +10,17 @@ class workwithdc():#
 
 
     def unlockAccount(self, username):
-        result = self.session.run_ps(f"D:\\Chatbot\\Scripts\\UnlockUser.ps1 {username}") # To run Powershell block
+        result = self.session.run_ps(f"C:\\Chatbot\\Scripts\\UnlockUser.ps1 {username}") # To run Powershell block
         #print(result)
         print(result.std_out.decode())
         return result
 
     def checkPerms(self,url):
         result = self.session.run_ps(f'C:\\Chatbot\\Scripts\\CheckFolderAccessWithCurrentUser.ps1 {url}')
+        print(result)
+        return result
+    
+    def checkPing(self,computer):
+        result = self.session.run_ps(f'C:\\Chatbot\\Scripts\\PingWorkstation.ps1 {computer}')
         print(result)
         return result

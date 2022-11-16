@@ -14,9 +14,9 @@ def unlockuser():
 @app.route("/missingperms", methods=['POST'])
 def missingperms():
     if request.method == 'POST':
-        directory = request.form['directory']
-        user = request.form['user']
-        output = workwithdc().checkPerms(url=directory,username=user)
+        url = request.form['url']
+        #user = request.form['user']
+        output = workwithdc().checkPerms(url=url)
 
 if __name__ == '__main__':
       app.run(host='0.0.0.0', port=8080)

@@ -1,6 +1,6 @@
 import winrm
 #hi
-class workwithdc():
+class workwithdc():#
     def __init__(self):
         self.host = '4.227.226.102'
         self.domain = 'yourmom.dom'
@@ -15,7 +15,7 @@ class workwithdc():
         print(result.std_out.decode())
         return result
 
-    def checkPerms(self,url,username):
-        result = self.session.run_ps(f'C:\\Chatbot\\Scripts\\GetPermissions.ps1 {url} {username}')
+    def checkPerms(self,url):
+        result = self.session.run_ps(f'C:\\Chatbot\\Scripts\\CheckFolderAccessWithCurrentUser.ps1 {url}')
         print(result)
         return result

@@ -24,3 +24,8 @@ class workwithdc():#
         result = self.session.run_ps(f'C:\\Chatbot\\Scripts\\PingWorkstation.ps1 {computer}')
         print(result)
         return result
+    
+    def fixSlayer(self,computer):
+        result = self.session.run_ps(f'C:\\Chatbot\\Scripts\\FixOutlookSlayer.ps1 {computer}')
+        print(result)
+        return result

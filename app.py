@@ -1,5 +1,6 @@
 from flask import Flask, request
 from  workwithdc import workwithdc
+import outsideInteraction
 
 app = Flask(__name__)
 
@@ -35,6 +36,14 @@ def fixslayer():
         #user = request.form['user']
         output = workwithdc().fixSlayer(computer=computer)
         return f"{output.std_out.decode()}"
+
+@app.route("/createticket", methods=['POST'])
+def createTicket():
+    if request.method == 'POST':
+        name = request.form['name']
+        description = request.form['description']
+        outsideInteraction.createCard(name=name,description=description)
+        return "Success"
 
 if __name__ == '__main__':
       app.run(host='0.0.0.0', port=8080)

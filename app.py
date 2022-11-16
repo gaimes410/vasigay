@@ -9,7 +9,8 @@ def unlockuser():
     if request.method == 'POST':
         user = request.form['user']
         output = workwithdc().unlockAccount(username=user)
-        return f"{user} has been unlocked, {output}"
+        print(output)
+        return f"{output}"
 
 @app.route("/missingperms", methods=['POST'])
 def missingperms():

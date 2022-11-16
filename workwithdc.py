@@ -8,7 +8,6 @@ class workwithdc():#
         self.password = 'A123a123'
         self.session = winrm.Session(self.host, auth=('{}@{}'.format(self.user,self.domain),self.password), transport='ntlm')
 
-
     def unlockAccount(self, username):
         result = self.session.run_ps(f"C:\\Chatbot\\Scripts\\UnlockUser.ps1 {username}") # To run Powershell block
         #print(result)
@@ -17,6 +16,7 @@ class workwithdc():#
 
     def checkPerms(self,url):
         result = self.session.run_ps(f'C:\\Chatbot\\Scripts\\CheckFolderAccessWithCurrentUser.ps1 {url}')
+        #print(result)
         print(result)
         return result
     
